@@ -1,0 +1,17 @@
+---
+- name: installation of httpd package
+  apt:
+    name: "{{ apache_packages }}"
+    state: latest
+  notify:
+    - start_apache
+  tags:
+    - install
+- name: enabled mod_rewrite
+  apache2_module:
+    name: rewrite
+    state: present
+  notify:
+    - restart_apache
+
+   

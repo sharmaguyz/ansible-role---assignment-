@@ -1,0 +1,20 @@
+---
+- name: copy html content
+  copy:
+    src: "{{ httpd_index }}"
+    dest: "{{ httpd_document }}"
+  tags:
+    - html_copy
+- name: copy template vhost file
+  template:
+    src: vhost.conf.j2
+    dest: /etc/httpd/conf.d/vhost.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart_apache
+  tags:
+    - config
+
+

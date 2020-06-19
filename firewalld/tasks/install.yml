@@ -1,0 +1,9 @@
+---
+- name: install firewalld packages
+  yum:
+    name: "{{ firewalld_packages }}"
+    state: latest
+  notify: 
+    - start_firewalld
+  tags:
+    - install

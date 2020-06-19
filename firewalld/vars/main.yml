@@ -1,0 +1,16 @@
+---
+# vars file for /root/ansible/roles/firewalld
+#
+firewalld_packages:
+  - firewalld
+
+firewalld_services:
+  - firewalld
+
+rules:
+  - http
+  - https
+
+ports:
+  - 80/tcp
+  - 443/tcp

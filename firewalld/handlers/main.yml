@@ -1,0 +1,12 @@
+---
+# handlers file for /root/ansible/roles/firewalld
+#
+- name: start_firewalld
+  service: 
+    name: "{{ item }}"
+    state: started    
+    enabled: true
+  with_items: "{{ firewalld_services }}"
+
+- name: firewalld_reload
+  command: firewalld-cmd --reload

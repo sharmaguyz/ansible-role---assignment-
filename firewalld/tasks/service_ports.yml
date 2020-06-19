@@ -1,0 +1,22 @@
+---
+- name: rule for firewalld https
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items: "{{ rules }}"
+  tags:
+    - serv
+- name: add port in firewalld
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items: "{{ ports }}"
+  notify:
+    - firewalld_reload
+  tags:
+    - fire
+

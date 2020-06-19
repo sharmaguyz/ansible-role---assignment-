@@ -1,0 +1,9 @@
+---
+- name: multiple linux os playbook
+  hosts: all
+  user: root
+  gather_fact: yes
+  roles:
+    - { roles: ubuntu, when: ansible_os_family == 'ubuntu'}
+    - { roles: centos, when: ansible_os_family == 'CentOS'}
+

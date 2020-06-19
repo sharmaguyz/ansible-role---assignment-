@@ -1,0 +1,19 @@
+#{{ ansible_managed }}
+
+<VirtualHost *:80>
+       ServerAdmin       {{ httpd_admin }}
+       ServerName        {{ httpd_server }}
+       DocumentRoot      {{ httpd_document }}
+       DirectoryIndex    {{ httpd_index }}
+</VirtualHost>
+       
+
+
+
+#httpd_listen: 80
+#httpd_admin: root@{{ ansible_fqdn }}
+#httpd_server: {{ ansible_fqdn }}
+#httpd_document_root: '/var/www/html'
+#httpd_index: index.html
+
+

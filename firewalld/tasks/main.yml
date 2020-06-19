@@ -1,0 +1,4 @@
+---
+# tasks file for /root/ansible/roles/firewalld
+- import_tasks: install.yml
+- import_tasks: service_ports.yml
